@@ -87,32 +87,32 @@ app.use(passport.session())
 //   res.send('this is the home page')
 // })
 
-// app.get('/Home', function(req,res){
-//     dbpost.readAllPosts()
-//   .then((posts)=>{
-//     console.log(posts)
-//     res.render('index',{
-//       posts: posts,
-//       title:'MR. WARE',
-//       oneLiner:'A Blog On the Life Of Ware',
-//       nav: [{
-//         Link:'/Home',
-//         Text:'Home'
-//       },{
-//         Link:'/Contact',
-//         Text:'Contact'
-//       },{
-//         Link:'/Post',
-//         Text:'Post'
-//       },{
-//           Link:'/About',
-//           Text:'About'}]
-//
-//    });
-//     }).catch((err) => {
-//       console.log('errored1',err);
-//   });
-// });
+app.get('/', function(req,res){
+    dbpost.readAllPosts()
+  .then((posts)=>{
+    console.log(posts)
+    res.render('index',{
+      posts: posts,
+      title:'MR. WARE',
+      oneLiner:'A Blog On the Life Of Ware',
+      nav: [{
+        Link:'/Home',
+        Text:'Home'
+      },{
+        Link:'/Contact',
+        Text:'Contact'
+      },{
+        Link:'/Post',
+        Text:'Post'
+      },{
+          Link:'/About',
+          Text:'About'}]
+
+   });
+    }).catch((err) => {
+      console.log('errored1',err);
+  });
+});
 app.use(helmet());
 
 
