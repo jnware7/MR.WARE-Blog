@@ -29,4 +29,4 @@ PRIMARY KEY (id)
 
 ALTER TABLE images ADD FOREIGN KEY (posts_id) REFERENCES posts (id);
 
-INSERT INTO users (user_name,password) VALUES('JeffreyW',process.env.POST_PASSWORD)
+INSERT INTO users (user_name,password) VALUES('JeffreyW','$2a$12$q4hobCV0cpxxSC6vTglGnu.d6TkRVGo5dEtyCDSBy5F6Vu7S3FsfK')

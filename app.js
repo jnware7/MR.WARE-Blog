@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express();
 require('dotenv').config()
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 50962;
 var bodyParser = require('body-parser')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
