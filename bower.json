@@ -1,0 +1,21 @@
+{
+  "name": "blog",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jnware7 <jnware7@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "font-awsome#^4.7.0"
+  }
+}

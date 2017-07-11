@@ -1,0 +1,32 @@
+require('dotenv')
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts (
+id  SERIAL,
+title TEXT,
+sub_title TEXT,
+post TEXT,
+writer TEXT NOT NULL DEFAULT 'MR. WARE',
+post_time TIMESTAMP DEFAULT NOW(),
+PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+id  SERIAL,
+user_name VARCHAR,
+password VARCHAR,
+PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS images;
+CREATE TABLE images (
+id  SERIAL,
+posts_id INTEGER,
+img VARCHAR,
+PRIMARY KEY (id)
+);
+
+ALTER TABLE images ADD FOREIGN KEY (posts_id) REFERENCES posts (id);
+
+INSERT INTO users (user_name,password) VALUES('JeffreyW',process.env.POST_PASSWORD)
