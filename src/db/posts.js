@@ -1,4 +1,4 @@
-var connectionString = 'postgres://ablujmaczorrcy:0b36481d9def866fd4d0796388eb4b7f35d1551fc589cfff7193ef831d71f722@ec2-50-17-217-166.compute-1.amazonaws.com:5432/de13el7r1q2da4'
+var connectionString = 'postgres://ablujmaczorrcy:0b36481d9def866fd4d0796388eb4b7f35d1551fc589cfff7193ef831d71f722@ec2-50-17-217-166.compute-1.amazonaws.com:5432/de13el7r1q2da4?ssl=true'
 var pgp = require ('pg-promise')()
 var db = pgp(connectionString)
 require('dotenv').config()
@@ -27,7 +27,7 @@ var READ_BY_ID=
 
  function readPosts(page = 1){
    var offSet = (page - 1) * 2
-   return db.many(READ_NEXT_POSTS,[offSet])
+   return db.any(READ_NEXT_POSTS,[offSet])
  }
 function createPosts(title,sub_title,post){
   return db.none(CREATE_POSTS,[title,sub_title,post])
