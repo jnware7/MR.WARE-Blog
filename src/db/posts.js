@@ -1,4 +1,4 @@
-var connectionString = 'http://localhost:5432/blogdb'
+var connectionString = process.env.CONNECTION_STRING
 var pgp = require ('pg-promise')()
 var db = pgp(connectionString)
 
