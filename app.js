@@ -1,6 +1,6 @@
 var express = require('express')
 var app = express();
-require('dotenv')
+require('dotenv').config()
 var port = process.env.PORT || 5000;
 var bodyParser = require('body-parser')
 var passport = require('passport')

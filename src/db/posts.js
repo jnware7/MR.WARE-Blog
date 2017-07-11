@@ -1,6 +1,7 @@
 var connectionString = process.env.CONNECTION_STRING
 var pgp = require ('pg-promise')()
 var db = pgp(connectionString)
+require('dotenv').config()
 
 var CREATE_POSTS =
 `INSERT INTO posts(
