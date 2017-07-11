@@ -1,4 +1,4 @@
-require('dotenv')
+
 DROP TABLE IF EXISTS posts;
 
 CREATE TABLE posts (
